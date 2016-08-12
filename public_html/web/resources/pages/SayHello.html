@@ -1,0 +1,32 @@
+<!DOCTYPE html><!-- html5标准类型 -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>首页</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                              if(getUrlParam("user")!=null){
+                                    $("p.content").replaceWith('<p>welcome '+getUrlParam("user")+' !</p>')
+                              }
+            });
+            
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+                if (r != null) return unescape(r[2]); return null; //返回参数值
+            }
+        </script>
+        
+    </head>
+    <body>
+        <section class="index" id="index">
+                <p class="content">hello</p>
+            </section>
+
+            <footer><!-- 尾 -->
+            </footer>
+        </section>
+    </body>
+</html>

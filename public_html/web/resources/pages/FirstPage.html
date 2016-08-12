@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html><!-- html5标准类型 -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>首页</title>
+        <script type="text/javascript" src="/resources/js/jquery-1.11.2.min.js"></script>
+        <link href="/resources/css/myCss.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                              $(".queding").click(function(){
+                                                $.ajax({
+                                                       type:'GET',
+                                                       url:'/reqxml?action=123',
+                                                       success:function(reqContent)
+                                                       {
+                                                            alert(reqContent);
+                                                       },
+                                                       error:function(reqContent){
+                                                            alert("请求失败");
+                                                       }
+                                                       });
+                                                });
+                              
+                              $(".baocun").click(function(){
+                                                  $.ajax({
+                                                         type:'GET',
+                                                         url:'/reqsavemap?type=test&name=juuman',
+                                                         success:function(reqContent)
+                                                         {
+                                                            alert(reqContent);
+                                                         },
+                                                         error:function(reqContent){
+                                                            alert("保存失败");
+                                                         }
+                                                         });
+                                                  });
+                              
+                              $(".duqu").click(function(){
+                                                  $.ajax({
+                                                         type:'GET',
+                                                         url:'/reqreadmap?type=&name=',
+                                                         success:function(reqContent)
+                                                         {
+                                                            alert(reqContent);
+                                                         },
+                                                         error:function(reqContent){
+                                                            alert("读取失败");
+                                                         }
+                                                         });
+                                                  });
+                              
+                              
+                              $(".tiaozhuan").click(function(){
+                                                  location.href = "/resources/pages/SayHello.html";
+                                                  });
+                              });
+                              
+        </script>
+        
+    </head>
+    <body>
+        <section class="index" id="index">
+                <div class="headAd"><img src="/resources/images/19.png" width="100%"/></div>
+                <a href='#' class="queding" id＝"queding">确定</a>
+                </br>
+                <a href='#' class="tiaozhuan" id＝"tiaozhuan">跳转</a>
+                
+                </br></br>
+                <a href='#' class="baocun" id＝"baocun">保存</a>
+                <a href='#' class="duqu" id＝"duqu">读取</a>
+        </section>
+        </br></br></br>
+        
+        <form name="input" action="/resources/pages/SayHello.html" method="get">
+            Username:
+            <input type="text" id="user" name="user" />
+            </br>
+            Password:
+            <input type="text" name="psw" />
+            <input type="submit" value="Submit" />
+        </form>
+
+            <footer><!-- 尾 -->
+            </footer>
+        </section>
+    </body>
+</html>
